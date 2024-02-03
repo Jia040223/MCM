@@ -22,6 +22,20 @@ class Loss(nn.Module):
 
         return loss
 
+class my_Cross_Loss(nn.Module):
+    def __init__(self, r):
+        super(my_Cross_Loss, self).__init__()
+        self.r = r
+        self.loss1 = nn.CrossEntropyLoss()
+
+    def forward(self, final_out, point_victor, probs):
+        length = len(point_victor)
+        loss1 = self.loss1(final_out, point_victor)
+        loss2 = sum([self.r * (final_out[i][0] - probs[i])**2 for i in range(length)])
+
+        loss = loss1 + loss2
+
+        return loss
 
 class LSTMModel(nn.Module):
     def __init__(self, input_size, hidden_size, num_layers, num_classes):

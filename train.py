@@ -4,9 +4,8 @@ import torch.optim as optim
 from torch.utils.data import DataLoader
 from torch.utils.data.sampler import SubsetRandomSampler
 from dataloader import WimbledonDataset
-from lstm import LSTMModel, Loss
-import csv
-from torch import nn
+from lstm import LSTMModel, my_Cross_Loss
+from parameter_get import *
 
 
 def get_train_valid_sampler(trainset, valid=0.1):
@@ -51,7 +50,7 @@ def train_or_eval_model(model, loss_function, dataloader, optimizer=None, train=
         point_victor = point_victor.permute(1,0)
 
         final_out = model(features)
-        loss = loss_function(final_out, point_victor)
+        loss = loss_function(final_out, point_victor, features[-1])
         if train:
             loss.backward()
             optimizer.step()
@@ -61,7 +60,7 @@ def train_or_eval_model(model, loss_function, dataloader, optimizer=None, train=
     avg_loss = round(np.sum(losses), 4)
     return avg_loss
 
-def train(p0):
+def train():
     cuda_availdabe = torch.cuda.is_available()
     if cuda_availdabe:
         print('Running on GPU')
@@ -69,13 +68,13 @@ def train(p0):
         print('Running on CPU')
 
     # 超参数
-    epochs = 10
+    epochs = 20
     batch_size = 16
     hidden_dim = 32
 
     num_layers = 2
-    lr = 0.00001
-    l2 = 0.000001
+    lr = 0.0001
+    l2 = 0.00001
 
     # 维度
     input_size = 38
@@ -86,7 +85,7 @@ def train(p0):
 
     optimizer = optim.Adam(model.parameters(), lr=lr, weight_decay=l2)
 
-    loss_function = nn.CrossEntropyLoss()
+    loss_function = my_Cross_Loss(r=1.0)
     #loss_function = Loss(1.0, 0.5)
 
     train_loader, valid_loader = get_Wimbledon_loaders(valid=0.0, batch_size=batch_size, num_workers=0)

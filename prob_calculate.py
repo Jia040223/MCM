@@ -191,7 +191,7 @@ class MomentumCaculater:
     def GetMomentum(self):
         t = len(self.Leverages)
         denominator = sum([(1 - self.a) ** i for i in range(t)])
-        weighted_sum = sum([(1 - self.a) ** i * self.Leverages[i] for i in range(t)])
+        weighted_sum = sum([(1 - self.a) ** i * self.Leverages[t-i-1] for i in range(t)])
 
         result = weighted_sum / denominator
 

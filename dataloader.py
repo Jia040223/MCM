@@ -3,12 +3,28 @@ from torch.utils.data import Dataset
 from torch.nn.utils.rnn import pad_sequence
 import pandas as pd
 import numpy as np
+from parameter_get import Get_Match_Init_Probs
 
+player_map = Get_Match_Init_Probs()
+
+def add_p_column(row):
+    player1 = row['player1']
+    player2 = row['player2']
+
+    # 使用映射字典获取相应的p值
+    p_value = player_map[(player1, player2)][0]
+
+    # 将p值添加到最后一列
+    row['p'] = p_value
+
+    return row
 
 class WimbledonDataset(Dataset):
     def __init__(self):
         csv_file_path = 'Data/Wimbledon_featured_matches_processed.csv'
         data_frame = pd.read_csv(csv_file_path)
+        columns_to_remove = list(data_frame.columns[-2:]) + list(data_frame.columns[:7]) + [data_frame.columns[15]]
+        data_frame = data_frame.apply(add_p_column, axis=1)
 
         # 去除倒数第二列和前7列
         '''self.elapsed_time = data_frame.groupby('game_id').apply(lambda group: group.iloc[:, [3]].reset_index(drop=True).values).to_numpy()
@@ -17,7 +33,6 @@ class WimbledonDataset(Dataset):
         self.features = data_frame.groupby('game_id').apply(lambda group: group.iloc[:, 7:-2].reset_index(drop=True).values).to_numpy()
         '''
 
-        columns_to_remove = list(data_frame.columns[-2:]) + list(data_frame.columns[:7])
         column_to_extract = 'elapsed_time'
         self.elapsed_time = data_frame[column_to_extract].to_numpy()
         column_to_extract = 'point_victor'
@@ -46,6 +61,8 @@ class WimbledonDataset(Dataset):
     def collate_fn(self, data):
         dat = pd.DataFrame(data)
         return [pad_sequence(dat[i]) if i<4 else pad_sequence(dat[i], True) if i<6 else dat[i].tolist() for i in dat]
+
+
 
 if __name__ == "__main__":
     test = WimbledonDataset()
