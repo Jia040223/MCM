@@ -15,8 +15,8 @@ def get_train_valid_sampler(trainset, valid=0.1):
     return SubsetRandomSampler(idx[split:]), SubsetRandomSampler(idx[:split])
 
 
-def get_Wimbledon_loaders(batch_size=32, valid=0.1, num_workers=0, pin_memory=False):
-    trainset = WimbledonDataset()
+def get_Wimbledon_loaders(filename, batch_size=32, valid=0.1, num_workers=0, pin_memory=False):
+    trainset = WimbledonDataset(filename)
     train_sampler, valid_sampler = get_train_valid_sampler(trainset, valid)
     train_loader = DataLoader(trainset,
                               batch_size=batch_size,
@@ -60,7 +60,7 @@ def train_or_eval_model(model, loss_function, dataloader, optimizer=None, train=
     avg_loss = round(np.sum(losses), 4)
     return avg_loss
 
-def train():
+def train(filename, load):
     cuda_availdabe = torch.cuda.is_available()
     if cuda_availdabe:
         print('Running on GPU')
@@ -68,7 +68,7 @@ def train():
         print('Running on CPU')
 
     # 超参数
-    epochs = 20
+    epochs = 50
     batch_size = 16
     hidden_dim = 32
 
@@ -80,7 +80,10 @@ def train():
     input_size = 38
     n_classes = 2
 
-    model = LSTMModel(input_size, hidden_dim, num_layers, n_classes)
+    if load:
+        model = LSTMModel(input_size, hidden_dim, num_layers, n_classes).load_state_dict(torch.load('model_parameters.pth'))
+    else:
+        model = LSTMModel(input_size, hidden_dim, num_layers, n_classes)
     model.cuda()
 
     optimizer = optim.Adam(model.parameters(), lr=lr, weight_decay=l2)
@@ -88,7 +91,7 @@ def train():
     loss_function = my_Cross_Loss(r=1.0)
     #loss_function = Loss(1.0, 0.5)
 
-    train_loader, valid_loader = get_Wimbledon_loaders(valid=0.0, batch_size=batch_size, num_workers=0)
+    train_loader, valid_loader = get_Wimbledon_loaders(filename= filename, valid=0.0, batch_size=batch_size, num_workers=0)
 
     for e in range(epochs):
         train_loss = train_or_eval_model(model, loss_function, train_loader, optimizer, True)
@@ -101,4 +104,14 @@ def train():
 
 
 if __name__ == "__main__":
-    train(0.5)
+    name_list_path = './Data/'
+    file_name_df = pd.read_csv(name_list_path + 'Wimbledon_featured_matches.csv')
+    file_name_list = file_name_df['match_id'].unique().tolist()
+
+    i = 0
+    for name in file_name_list:
+        if i == 0:
+            model = train(name, load = False)
+        else:
+            model = train(name, load = True)
+        torch.save(model.state_dict(), 'model_parameters.pth')
