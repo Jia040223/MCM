@@ -118,6 +118,32 @@ class MomentumCaculater:
         self.set_win_P = self.set_P_caculator.GetProbability(0, 0, 0)
         self.match_P_caculator = WinMatchProCalculator(3, self.set_win_P)
 
+    def PredictPro(self, i, j, T):
+        if T == 0:
+            Game1_win_P = self.Game1_P_caculator.GetProbability(i, j)
+            Game_win_Set_win_P = self.set_P_caculator.GetProbability(self.wingame1+1, self.wingame2, 1)
+            Game_loss_Set_win_P = self.set_P_caculator.GetProbability(self.wingame1, self.wingame2+1, 1)
+            Set_win_Match_win_P = self.match_P_caculator.GetProbability(self.winset1+1, self.winset2)
+            Set_loss_Match_win_P = self.match_P_caculator.GetProbability(self.winset1, self.winset2+1)
+
+            Set_win_P = Game1_win_P * Game_win_Set_win_P + (1 - Game1_win_P) * Game_loss_Set_win_P
+            Match_win_P = Set_win_P * Set_win_Match_win_P + (1 - Set_win_P) * Set_loss_Match_win_P
+
+            result = Match_win_P
+            return result
+        else:
+            Game2_win_P = self.Game1_P_caculator.GetProbability(i, j)
+            Game_win_Set_win_P = self.set_P_caculator.GetProbability(self.wingame1 + 1, self.wingame2, 1)
+            Game_loss_Set_win_P = self.set_P_caculator.GetProbability(self.wingame1, self.wingame2 + 1, 1)
+            Set_win_Match_win_P = self.match_P_caculator.GetProbability(self.winset1 + 1, self.winset2)
+            Set_loss_Match_win_P = self.match_P_caculator.GetProbability(self.winset1, self.winset2 + 1)
+
+            Set_win_P = Game2_win_P * Game_win_Set_win_P + (1 - Game2_win_P) * Game_loss_Set_win_P
+            Match_win_P = Set_win_P * Set_win_Match_win_P + (1 - Set_win_P) * Set_loss_Match_win_P
+
+            result = Match_win_P
+            return result
+
     def GetLeverage(self, i, j, T, win):
         if T == 0:
             Point_win_Game1_win_P = self.Game1_P_caculator.GetProbability(i+1, j)
@@ -141,15 +167,15 @@ class MomentumCaculater:
             self.Leverages.append(result)
             return result
         else:
-            Point_win_Game1_win_P = self.Game1_P_caculator.GetProbability(i+1, j)
-            Point_loss_Game1_win_P = self.Game1_P_caculator.GetProbability(i, j+1)
+            Point_win_Game2_win_P = self.Game2_P_caculator.GetProbability(i+1, j)
+            Point_loss_Game2_win_P = self.Game2_P_caculator.GetProbability(i, j+1)
             Game_win_Set_win_P = self.set_P_caculator.GetProbability(self.wingame1+1, self.wingame2, 0)
             Game_loss_Set_win_P = self.set_P_caculator.GetProbability(self.wingame1, self.wingame2 + 1, 0)
             Set_win_Match_win_P = self.match_P_caculator.GetProbability(self.winset1+1, self.winset2)
             Set_loss_Match_win_P = self.match_P_caculator.GetProbability(self.winset1, self.winset2+1)
 
-            Point_win_Set_win_P = Point_win_Game1_win_P * Game_win_Set_win_P + (1 - Point_win_Game1_win_P) * Game_loss_Set_win_P
-            Point_loss_Set_win_P = Point_loss_Game1_win_P * Game_win_Set_win_P + (1 - Point_loss_Game1_win_P) * Game_loss_Set_win_P
+            Point_win_Set_win_P = Point_win_Game2_win_P * Game_win_Set_win_P + (1 - Point_win_Game2_win_P) * Game_loss_Set_win_P
+            Point_loss_Set_win_P = Point_loss_Game2_win_P * Game_win_Set_win_P + (1 - Point_loss_Game2_win_P) * Game_loss_Set_win_P
 
             Point_win_Match_win_P = Point_win_Set_win_P * Set_win_Match_win_P + (1 - Point_win_Set_win_P) * Set_loss_Match_win_P
             Point_loss_Match_win_P = Point_loss_Set_win_P * Set_win_Match_win_P + (1 - Point_loss_Set_win_P) * Set_loss_Match_win_P

@@ -3,8 +3,11 @@ import torch
 from prob_calculate import *
 import pandas as pd
 from train import *
+from mytools import *
 
 M = 0.9
+Momentums = []
+Win_Probability = []
 
 if __name__ == "__main__":
     data_frame = pd.read_csv('Data/Wimbledon_featured_matches_processed.csv')
@@ -50,6 +53,9 @@ if __name__ == "__main__":
 
         Momentum_Caculator.GetLeverage(point1, point2, T, (point_victor[i] == 1))
         momentum, _ = Momentum_Caculator.GetMomentum()
+        Momentums.append(momentum)
+        win_rate = Momentum_Caculator.PredictPro(point1, point2, T)
+        Win_Probability.append(win_rate)
 
         ''' Update P1, P2'''
         model1.eval()
@@ -63,7 +69,7 @@ if __name__ == "__main__":
             finetune_p2 = model2(feature)[0][0].item()
             p2 = p2 * M + finetune_p2 * (1 - M)
 
-        print("p : ", p1, "T :", T)
-        print("momentum :", momentum)
-
         Momentum_Caculator.UpdateProbability(p1, p2)
+
+    Draw_Line_Graph(Momentums, "Points", "Momentums", "Momentums over Points")
+    Draw_Line_Graph(Win_Probability, "Points", "Win Rate", "Win Rate over Points")

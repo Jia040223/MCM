@@ -69,7 +69,7 @@ def train(p0):
         print('Running on CPU')
 
     # 超参数
-    epochs = 5
+    epochs = 10
     batch_size = 16
     hidden_dim = 32
 
