@@ -6,6 +6,7 @@ column_significant_counts = {}
 
 # 遍历数据集文件夹
 for filename in os.listdir('./T_Test'):
+    print(filename)
     if filename.endswith('.csv'):
         # 读取每个 CSV 文件
         file_path = os.path.join('./T_Test', filename)

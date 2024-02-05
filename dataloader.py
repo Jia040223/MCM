@@ -23,7 +23,7 @@ class WimbledonDataset(Dataset):
     def __init__(self, filename):
         csv_file_path = 'Data/' + filename + '.csv'
         data_frame = pd.read_csv(csv_file_path)
-        columns_to_remove = list(data_frame.columns[-4:]) + list(data_frame.columns[:7]) + [data_frame.columns[15]]
+        columns_to_remove = list(data_frame.columns[-6:]) + list(data_frame.columns[:7]) + [data_frame.columns[15]]
         data_frame = data_frame.apply(add_p_column, axis=1)
 
         # 去除倒数第二列和前7列

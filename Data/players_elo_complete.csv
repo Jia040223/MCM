@@ -1,65 +1,65 @@
-name,elo
-,
-Novak Djokovic,2454
-,
-Jannik Sinner,2256
-,
-Daniil Medvedev,2235
-,
-Alexander Zverev,2174
-,
-Andrey Rublev,2134
-,
-Grigor Dimitrov,2133
-,
-Hubert Hurkacz,2093
-,
-Stefanos Tsitsipas,2091
-,
-Matteo Berrettini,2067
-,
-Frances Tiafoe,2009
-,
-Tommy Paul,2009
-,
-Nicolas Jarry,1985
-,
-Alejandro Davidovich Fokina,1974
-,
-Denis Shapovalov,1959
-,
-Lorenzo Musetti,1944
-,
-Alexander Bublik,1943
-,
-Roman Safiullin,1940
-,
-Laslo Djere,1925
-,
-Stan Wawrinka,1925
-,
-Marton Fucsovics,1920
-,
-Jiri Lehecka,1897
-,
-Mikael Ymer,1870
-,
-Christopher Eubanks,1864
-,
-David Goffin,1851
-,
-Liam Broady,1818
-,
-Maximilian Marterer,1814
-,
-Quentin Halys,1813
-,
-Guido Pella,1797
-,
-Carlos Alcaraz,2120
-,
-Holger Rune,1916
-,
-Christopher O'Connell,1664
-,
-Daniel Elahi Galan,1546
+name,elo,age
+,,
+Novak Djokovic,2454,36.6
+,,
+Jannik Sinner,2256,22.3
+,,
+Daniil Medvedev,2235,27.8
+,,
+Alexander Zverev,2174,26.6
+,,
+Andrey Rublev,2134,26.1
+,,
+Grigor Dimitrov,2133,32.6
+,,
+Hubert Hurkacz,2093,26.8
+,,
+Stefanos Tsitsipas,2091,25.3
+,,
+Matteo Berrettini,2067,27.7
+,,
+Frances Tiafoe,2009,25.9
+,,
+Tommy Paul,2009,26.6
+,,
+Nicolas Jarry,1985,28.2
+,,
+Alejandro Davidovich Fokina,1974,24.5
+,,
+Denis Shapovalov,1959,24.7
+,,
+Lorenzo Musetti,1944,21.8
+,,
+Alexander Bublik,1943,26.5
+,,
+Roman Safiullin,1940,26.4
+,,
+Laslo Djere,1925,28.5
+,,
+Stan Wawrinka,1925,38.7
+,,
+Marton Fucsovics,1920,31.8
+,,
+Jiri Lehecka,1897,22.1
+,,
+Mikael Ymer,1870,24.8
+,,
+Christopher Eubanks,1864,27.6
+,,
+David Goffin,1851,33.1
+,,
+Liam Broady,1818,29.9
+,,
+Maximilian Marterer,1814,28.5
+,,
+Quentin Halys,1813,27.2
+,,
+Guido Pella,1797,33.2
+,,
+Carlos Alcaraz,2120,20.6
+,,
+Holger Rune,1916,20.7
+,,
+Christopher O'Connell,1664,29.6
+,,
+Daniel Elahi Galan,1546,27.5
