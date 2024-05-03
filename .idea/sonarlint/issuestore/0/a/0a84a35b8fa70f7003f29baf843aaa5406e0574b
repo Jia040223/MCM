@@ -1,0 +1,52 @@
+
+ipython:S100"RRename method "GetProbability" to match the regular expression ^[a-z_][a-z0-9_]*$.(…µÄš
+qpython:S100"URename method "UpdateProbability" to match the regular expression ^[a-z_][a-z0-9_]*$.(Ì§½åşÿÿÿÿ
+ppython:S100"TRename method "CalcProbability4" to match the regular expression ^[a-z_][a-z0-9_]*$.(Ô±†Îşÿÿÿÿ
+ipython:S117$"MRename this parameter "T" to match the regular expression ^[_a-z][a-z0-9_]*$.(ùÊéùÿÿÿÿ
+spython:S100,"WRename method "GetProbability_func" to match the regular expression ^[a-z_][a-z0-9_]*$.(ÏøÍ§úÿÿÿÿ
+cpython:S117?"MRename this parameter "T" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ñô™l
+hpython:S100?"RRename method "GetProbability" to match the regular expression ^[a-z_][a-z0-9_]*$.(Ñô™l
+lpython:S100H"URename method "UpdateProbability" to match the regular expression ^[a-z_][a-z0-9_]*$.(ğûœÑ
+ipython:S117N"MRename this parameter "T" to match the regular expression ^[_a-z][a-z0-9_]*$.(ƒèˆªüÿÿÿÿ
+gpython:S100N"KRename method "UpdateT" to match the regular expression ^[a-z_][a-z0-9_]*$.(ƒèˆªüÿÿÿÿ
+ipython:S100Y"RRename method "GetProbability" to match the regular expression ^[a-z_][a-z0-9_]*$.(…µÄš
+qpython:S100d"URename method "UpdateProbability" to match the regular expression ^[a-z_][a-z0-9_]*$.(Ì§½åşÿÿÿÿ
+upython:S116q"YRename this field "Game1_P_caculator" to match the regular expression ^[_a-z][_a-z0-9]*$.(ñÕ­úÿÿÿÿ
+mpython:S116o"QRename this field "Leverages" to match the regular expression ^[_a-z][_a-z0-9]*$.(‹‰è»ıÿÿÿÿ
+hpython:S116v"QRename this field "set_win_P" to match the regular expression ^[_a-z][_a-z0-9]*$.(³„
+spython:S116u"WRename this field "set_P_caculator" to match the regular expression ^[_a-z][_a-z0-9]*$.(«ïÆûÿÿÿÿ
+upython:S116s"YRename this field "Game2_P_caculator" to match the regular expression ^[_a-z][_a-z0-9]*$.(Áæğúÿÿÿÿ
+opython:S116w"YRename this field "match_P_caculator" to match the regular expression ^[_a-z][_a-z0-9]*$.(°òÀ=
+jpython:S116r"SRename this field "Game1_win_P" to match the regular expression ^[_a-z][_a-z0-9]*$.(ŞÖ§ô
+opython:S116t"SRename this field "Game2_win_P" to match the regular expression ^[_a-z][_a-z0-9]*$.(ü®¦ƒşÿÿÿÿ
+dpython:S117j"MRename this parameter "T" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ö¯³³
+spython:S117{"\Rename this local variable "Game1_win_P" to match the regular expression ^[_a-z][a-z0-9_]*$.(Á—Ø€
+ypython:S117‡"\Rename this local variable "Game2_win_P" to match the regular expression ^[_a-z][a-z0-9_]*$.(µ‘Ÿâùÿÿÿÿ
+zpython:S117}"dRename this local variable "Game_loss_Set_win_P" to match the regular expression ^[_a-z][a-z0-9_]*$.(Çï
+zpython:S117|"cRename this local variable "Game_win_Set_win_P" to match the regular expression ^[_a-z][a-z0-9_]*$.(§à˜ø
+ypython:S117‚"\Rename this local variable "Match_win_P" to match the regular expression ^[_a-z][a-z0-9_]*$.(ŸÙ•¤úÿÿÿÿ
+|python:S117"eRename this local variable "Set_loss_Match_win_P" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÿÌ¾™
+€python:S117~"dRename this local variable "Set_win_Match_win_P" to match the regular expression ^[_a-z][a-z0-9_]*$.(‚Ä¹õùÿÿÿÿ
+rpython:S117"ZRename this local variable "Set_win_P" to match the regular expression ^[_a-z][a-z0-9_]*$.(Œ‹õ›
+ipython:S117y"MRename this parameter "T" to match the regular expression ^[_a-z][a-z0-9_]*$.(ñ‡®üÿÿÿÿ
+jpython:S100y"NRename method "PredictPro" to match the regular expression ^[a-z_][a-z0-9_]*$.(ñ‡®üÿÿÿÿ
+{python:S117˜"dRename this local variable "Game_loss_Set_win_P" to match the regular expression ^[_a-z][a-z0-9_]*$.(Çï
+{python:S117—"cRename this local variable "Game_win_Set_win_P" to match the regular expression ^[_a-z][a-z0-9_]*$.(§à˜ø
+python:S117–"gRename this local variable "Point_loss_Game1_win_P" to match the regular expression ^[_a-z][a-z0-9_]*$.(µä£ü
+„python:S117«"gRename this local variable "Point_loss_Game2_win_P" to match the regular expression ^[_a-z][a-z0-9_]*$.(­Ì¯Ñùÿÿÿÿ
+python:S117 "gRename this local variable "Point_loss_Match_win_P" to match the regular expression ^[_a-z][a-z0-9_]*$.(ŞÓÓâ
+‚python:S117"eRename this local variable "Point_loss_Set_win_P" to match the regular expression ^[_a-z][a-z0-9_]*$.(Âƒ©•ûÿÿÿÿ
+~python:S117•"fRename this local variable "Point_win_Game1_win_P" to match the regular expression ^[_a-z][a-z0-9_]*$.(¸£„Â
+~python:S117ª"fRename this local variable "Point_win_Game2_win_P" to match the regular expression ^[_a-z][a-z0-9_]*$.(Æ±ğ
+~python:S117Ÿ"fRename this local variable "Point_win_Match_win_P" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÜÈö
+python:S117œ"dRename this local variable "Point_win_Set_win_P" to match the regular expression ^[_a-z][a-z0-9_]*$.(Î‚ûšşÿÿÿÿ
+}python:S117š"eRename this local variable "Set_loss_Match_win_P" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÿÌ¾™
+python:S117™"dRename this local variable "Set_win_Match_win_P" to match the regular expression ^[_a-z][a-z0-9_]*$.(‚Ä¹õùÿÿÿÿ
+jpython:S117“"MRename this parameter "T" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÆóûÈşÿÿÿÿ
+lpython:S100“"ORename method "GetLeverage" to match the regular expression ^[a-z_][a-z0-9_]*$.(ÆóûÈşÿÿÿÿ
+gpython:S100¿"ORename method "GetMomentum" to match the regular expression ^[a-z_][a-z0-9_]*$.(şíö…
+mpython:S100È"URename method "UpdateProbability" to match the regular expression ^[a-z_][a-z0-9_]*$.(ğûœÑ
+jpython:S117Ô"MRename this parameter "T" to match the regular expression ^[_a-z][a-z0-9_]*$.(ƒèˆªüÿÿÿÿ
+hpython:S100Ô"KRename method "UpdateT" to match the regular expression ^[a-z_][a-z0-9_]*$.(ƒèˆªüÿÿÿÿ
+jpython:S100Ø"MRename method "UpdateSet" to match the regular expression ^[a-z_][a-z0-9_]*$.(Å‹ øÿÿÿÿ
+kpython:S100Ü"NRename method "UpdateGame" to match the regular expression ^[a-z_][a-z0-9_]*$.(¼¨ƒşÿÿÿÿ

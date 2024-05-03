@@ -1,0 +1,17 @@
+
+rpython:S1542	"URename function "Draw_Line_Graph" to match the regular expression ^[a-z_][a-z0-9_]*$.( Ó¬œþÿÿÿÿ
+ypython:S1542"\Rename function "Draw_Filled_Line_Graph" to match the regular expression ^[a-z_][a-z0-9_]*$.(ˆ®ã£ùÿÿÿÿ
+Apython:S1481 ")Remove the unused local variable "zeros".(žˆÝù
+hpython:S1764,"KCorrect one of the identical sub-expressions on both sides of operator "/".(çóÎèýÿÿÿÿ
+hpython:S1764/"KCorrect one of the identical sub-expressions on both sides of operator "/".(±À¾ýüÿÿÿÿ
+lpython:S1542<"TRename function "Add_csv_column" to match the regular expression ^[a-z_][a-z0-9_]*$.(Ôƒ°µ
+npython:S1542G"QRename function "Radar_Chart" to match the regular expression ^[a-z_][a-z0-9_]*$.(æÃ‚Ñùÿÿÿÿ
+Jpython:S1481N"-Remove the unused local variable "color_map".(Û„Ž±úÿÿÿÿ
+rpython:S1542z"URename function "Judge_final_win" to match the regular expression ^[a-z_][a-z0-9_]*$.(šƒ¬ªÿÿÿÿÿ
+Cpython:S1481€"*Remove the unused local variable "result".(ô¥æÕ
+Cpython:S1481‚"*Remove the unused local variable "result".(ŸÞÒÈ
+Cpython:S1481…"*Remove the unused local variable "result".(ô¥æÕ
+Cpython:S1481‡"*Remove the unused local variable "result".(ŸÞÒÈ
+Cpython:S1481Š"*Remove the unused local variable "result".(ô¥æÕ
+Cpython:S1481Œ"*Remove the unused local variable "result".(ŸÞÒÈ
+Hpython:S1481Ž"*Remove the unused local variable "result".(‰‘˜‰üÿÿÿÿ
